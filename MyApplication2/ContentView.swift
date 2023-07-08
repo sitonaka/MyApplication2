@@ -15,6 +15,9 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, iPhone!")
+            Button("Push me !") {
+                
+            }
         }
         .padding()
     }
