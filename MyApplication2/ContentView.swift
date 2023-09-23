@@ -9,14 +9,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isAndroid = false
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, iPhone!")
+            if isAndroid {
+                Text("Hello, Android!")
+            } else {
+                Text("Hello, iPhone!")
+            }
             Button("Push me !") {
-                
+                isAndroid = !isAndroid
             }
         }
         .padding()
