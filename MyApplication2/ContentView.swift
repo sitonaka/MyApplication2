@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var isAndroid = false
+    @State private var dateText = ""
     
     var body: some View {
         VStack {
@@ -25,8 +26,21 @@ struct ContentView: View {
             Button("Push me !") {
                 isAndroid = !isAndroid
             }
+            Text(dateText)
+            Button("Time !") {
+                dateText = getDateText()
+            }
         }
         .padding()
+    }
+    
+    private func getDateText() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .long
+        let now = Date()
+        let result = formatter.string(from: now)
+        return result
     }
 }
 
